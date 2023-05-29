@@ -12,12 +12,9 @@ fn read_file_buffer(path: &str) -> io::Result<usize> {
     return reader.read_to_end(&mut buffer);   
 }
 
-pub fn bytes_from_file(path: &str){
-    let bytes = read_file_buffer(path);
-    match bytes {
-        Ok(bins) => println!("{bins:?}"),
-        Err(e) => println!("Error finding the file: {e:?}"),
-    }
+pub fn bytes_from_file(path: &str) -> usize{
+    let bytes = read_file_buffer(path).unwrap();
+    bytes
 }
 
 pub fn get_args() -> String{

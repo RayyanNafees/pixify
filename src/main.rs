@@ -1,8 +1,8 @@
 
-mod conv;
+mod convert;
 
 fn main() {
-    let args = conv::get_args();
-    let bytes = conv::bytes_from_file(&args);
+    let args = convert::get_args();
+    let bytes = convert::bytes_from_file(&args);
     println!("{bytes:?}")
 }
